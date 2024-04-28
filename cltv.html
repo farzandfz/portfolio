@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Keeping the source of HTML template as commented out ~Farzand
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>CLTV</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html">Home</a></h1>
+					<nav>
+						<a href="#menu">Click Me</a>
+					</nav>
+				</header>
+
+			<!-- Menu -->
+				<nav id="menu">
+					<div class="inner">
+						<h2>Menu</h2>
+						<ul class="links">
+							<li><a href="index.html">Start</a></li>
+							<li><a href="portfolio.html">Projects</a></li>
+							<li><a href="blog.html">Blog</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+						<a href="#" class="close">Close</a>
+					</div>
+				</nav>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>CLTV</h2>
+								<p>Understanding the Lifetime Value of current set of customers is crucial to any Business to form meaningful strategies around Customer Acquisition & Retention</p>
+							</div>
+						</header>
+				<!-- Content -->
+							<div class="wrapper">
+								<div class="inner">
+
+									<h3 class="major">What does CLTV mean?</h3>
+									<p>CLTV or Customer Lifetime Value is a critical metric in business which represents the total value a customer brings to a business over the entire duration of their relationship. While 
+										it can have various interpretations, I'll talk about how I've used it in the past for better budget allocation for customer retention & acquisition. With that being set aside, 
+										for a retail or Ecom business it's not just about revenue generated from hisotic or recent purchases but it also covers future purchases & the overall loyalty of the customer. By understanding CLTV,
+										businesses can make informed descisions about marketing strategis, customer retention & acquisition efforts , untimately aiming to maximize long term profitablity of the business and customer satisfaction
+									</p>
+									<h3 class="major">How do I calculate LTV of my current customer base</h3>
+									<p>Let's assume we want to calculate Lifetime Value of current customer base of any business, we'll be getting the list of currently active customers (usually rolling 12M), we'll 
+										then compute for each customer how many years in the previous 4 years have they been a part of the business, and how often they purchased and how much was the spend in the current year. To make things easier for you
+									to visualize, I've attached the sample CSV with randomly generated data with a jupyter notebook. Feel free to download and experiment as required (Sample image of data attached below)
+								</p>
+
+
+									<div class="row gtr-uniform">
+										<div class="col-12"><span class="image fit"><img src="images/CLTV_data.jpg" alt="" /></span></div>
+									</div>
+
+									<br> <br>
+									<p> In the screenshot above, for each customer I have added if or not the customer made a purchase in last 5 years where 1 would represent Yes & 0 would be No. 
+										Please note that all values of 2023 should be 1 as we are checking for the historic transactions of recent 12M rolling customers </p>
+									<h4>We'll now be making following changes to the dataset:</h4>
+									<ul>
+										<li>Add a new column Total Lifespan which will be sum of all years from 2023 to 2019</li>
+										<li>Add number of marketing communications/ budget spend on each customer</li>
+										<li>Calculate LTV for each customer which is defined as <b> Lifespan * Average Transaction Value * Visits, </b>this will tell us how much is a customer likel to spend in next 5 years as per
+											their current shopping pattern </li> 
+										<li>Aggreagrate the results on Declie and have Customer count, Revenue generated in 2023, LTV in columns</li>
+									</ul>
+									
+									
+									<h4>Results after running the code on sample data</h4>
+									<div class="row gtr-uniform">
+										<div class="col-12"><span class="image fit"><img src="images/CLTV Summary.jpg" alt="" /></span></div>
+									</div>
+
+									<br> <br>
+
+									<h4>Summary</h4>
+									<ul>
+										<li>The customers in all deciles received equal amount to communications</li>
+										<li>The projected value of customers in bottom 3 deciles is very less, business should spend less money on them as ROI seems to be low</li>
+										<li>The projected value of customers in top 3 deciles is quite high, business may increase the frequncy of conatact to keep them engaged</li> 
+									</ul>
+									
+
+									<p>
+										While the above approach was very simple and helped us gague the effictiveness of targeting for course corrections, there can be alternate approchaces to do the same thing. Also, since
+										this exercise is does not includes any segmentations, more cohorts to bifurcate customers can be introduced to increase accuracy of Lifespan & see the same data from other lenses. One 
+										such example is study the LTV of acquired customers, this will help business understand if the current approach of customer acquisition is getting us premium customers or just explorers!
+										<br> <br>
+										That's all for this project for now, you can reachout to me via contact page if you have any comments
+									</p>
+
+									<ul class="actions">
+										<li><a href="https://drive.google.com/drive/folders/1YNAQAc6UIkWHNBbGVdq9zKukSIzddaBx?usp=drive_link" class="button">Download Files for this Project here!</a></li>
+									</ul>
+
+								</div>
+							</div>
+
+
+
+					</section>
+				<!-- Footer -->
+				<section id="footer">
+					<div class="inner">
+						<ul class="copyright">
+							<li>&copy; 2024 Farzand Khan</li><li>Powered by HTML5 UP</li>
+						</ul>
+					</div>
+				</section>
+
+		</div>
+
+	<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+</body>
+</html>
